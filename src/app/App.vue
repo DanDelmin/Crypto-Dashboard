@@ -204,6 +204,13 @@ watch(
   font-size: 16px;
   opacity: 0.55;
   z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 15px;
+  height: 20px;
 }
 
 .theme-toggle__icon--light {
