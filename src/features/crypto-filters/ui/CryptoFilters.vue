@@ -114,7 +114,9 @@ function toggleDirection() {
   border: none;
   outline: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 16px; /* iOS fix */
+  transform: scale(0.9);
+  transform-origin: left top;
   color: var(--text-primary);
 }
 
