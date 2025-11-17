@@ -113,14 +113,22 @@ const chart = ref<CryptoMarketChart | null>(null)
 const prices = computed(() => chart.value?.prices ?? [])
 
 const weekChangePercent = computed<number | null>(() => {
-  if (!prices.value.length) return null
+  const list = prices.value;
 
-  const firstPrice = prices.value[0][1]
-  const lastPrice = prices.value[prices.value.length - 1][1]
-  if (firstPrice === 0) return null
+  if (!Array.isArray(list) || list.length < 2) {
+    return null;
+  }
 
-  return ((lastPrice - firstPrice) / firstPrice) * 100
-})
+  const first = list[0]?.[1];
+  const last = list[list.length - 1]?.[1];
+
+  if (first === undefined || last === undefined || first === 0) {
+    return null;
+  }
+
+  return ((last - first) / first) * 100;
+});
+
 
 onMounted(async () => {
   const id = route.params.id
