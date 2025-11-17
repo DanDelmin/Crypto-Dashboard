@@ -1,0 +1,59 @@
+/* src/styles/reset.css */
+
+/* Базовый reset + нормализация типографики */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Сбрасываем margin у всех типовых блоков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Списки без маркеров по умолчанию */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Картинки адаптивные */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Кнопки и инпуты наследуют шрифт */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

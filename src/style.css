@@ -1,0 +1,140 @@
+/* === THEME TOKENS === */
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+  'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --skeleton-bg: rgba(148, 163, 184, 0.25);
+}
+
+/* LIGHT THEME */
+:root[data-theme='light'] {
+  --bg-body: #f3f4ff;
+  --bg-elevated: #ffffff;
+  --bg-elevated-soft: #f9fafb;
+
+  --bg-input: #ffffff;
+
+  --border-subtle: #e2e8f0;
+  --border-strong: #c7d2fe;
+
+  --text-primary: #0f172a;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+
+  --accent: #4f46e5;
+  --accent-soft: rgba(79, 70, 229, 0.08);
+  --accent-strong: #4338ca;
+
+  --danger: #b91c1c;
+  --success: #16a34a;
+
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --skeleton-bg: rgba(30, 64, 175, 0.45);
+}
+
+/* DARK THEME */
+:root[data-theme='dark'] {
+  --bg-body: #020617; /* slate-950 */
+  --bg-elevated: #020617;
+  --bg-elevated-soft: #020617;
+
+  --bg-input: #020617;
+
+  --border-subtle: #1f2937;
+  --border-strong: #4b5563;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.18);
+  --accent-strong: #818cf8;
+
+  --danger: #f97373;
+  --success: #4ade80;
+
+  --shadow-soft: 0 22px 50px rgba(0, 0, 0, 0.65);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(79, 70, 229, 0.18), transparent 55%),
+  radial-gradient(circle at bottom, rgba(56, 189, 248, 0.12), transparent 55%),
+  var(--bg-body);
+  color: var(--text-primary);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Сброс ссылок */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Утилита для “неактивного” текста */
+.text-muted {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.6);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.9);
+}
+
+/* ApexCharts tooltip – кастом под тёмную тему */
+:root[data-theme='dark'] .apexcharts-tooltip {
+  background-color: #020617 !important;   /* тёмный фон */
+  border: 1px solid #1f2937 !important;
+  color: #e5e7eb !important;              /* светлый текст */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+:root[data-theme='dark'] .apexcharts-tooltip-title {
+  background-color: #020617 !important;
+  border-bottom: 1px solid #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+:root[data-theme='dark'] .apexcharts-tooltip-text,
+:root[data-theme='dark'] .apexcharts-tooltip-series-group {
+  color: #e5e7eb !important;
+}

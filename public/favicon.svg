@@ -1,0 +1,64 @@
+<svg
+        width="64"
+        height="64"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Фон прозрачный, чтобы фавикон смотрелся и в лайт, и в дарк теме -->
+
+    <defs>
+        <!-- Основной градиент кольца: тёплый верх, холодный низ -->
+        <radialGradient id="outerGradient" cx="0" cy="0" r="1"
+                        gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(18 14) rotate(35) scale(44 44)">
+            <stop offset="0" stop-color="#FACC15"/>
+            <stop offset="0.28" stop-color="#FDBA74"/>
+            <stop offset="0.55" stop-color="#FB923C"/>
+            <stop offset="0.78" stop-color="#F97316"/>
+            <stop offset="0.9" stop-color="#4F46E5"/>
+            <stop offset="1" stop-color="#0EA5E9"/>
+        </radialGradient>
+
+        <!-- Лёгкое затемнение нижней части -->
+        <linearGradient id="bottomShade" x1="32" y1="36" x2="32" y2="64"
+                        gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+            <stop offset="1" stop-color="#000000" stop-opacity="0.28"/>
+        </linearGradient>
+
+        <!-- Блик сверху слева -->
+        <radialGradient id="highlight" cx="0" cy="0" r="1"
+                        gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(20 10) rotate(35) scale(20 18)">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Внутренняя «ореол»-обводка -->
+        <radialGradient id="innerGlow" cx="0" cy="0" r="1"
+                        gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(32 32) scale(16)">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Основное кольцо -->
+    <circle cx="32" cy="32" r="24" fill="url(#outerGradient)" />
+
+    <!-- Лёгкая тень снизу, чтобы повторить синий шлейф -->
+    <path
+            d="M11 34C13.5 44.5 22.5 52 32.5 52C40 52 46 49 51 43.5C47.5 48.5 43 52 37 54C31 56 26 55.5 21.5 53.5C17 51.5 13.5 48 11 43.5V34Z"
+            fill="url(#bottomShade)"
+    />
+
+    <!-- Блик сверху -->
+    <circle cx="28" cy="14" r="12" fill="url(#highlight)" />
+
+    <!-- Внутреннее кольцо (ореол) -->
+    <circle cx="32" cy="32" r="14" fill="url(#innerGlow)" />
+
+    <!-- Белое отверстие -->
+    <circle cx="32" cy="32" r="8" fill="#FFFFFF" />
+</svg>
